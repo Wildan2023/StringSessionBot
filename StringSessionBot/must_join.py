@@ -13,7 +13,7 @@ async def must_join_channel(bot: Client, msg: Message):
             await bot.get_chat_member(MUST_JOIN, msg.from_user.id)
         except UserNotParticipant:
             if MUST_JOIN.isalpha():
-                link = "https://t.me/" + MUST_JOIN
+                link = "https://t.me/Disney_storeDan" + MUST_JOIN
             else:
                 chat_info = await bot.get_chat(MUST_JOIN)
                 link = chat_info.invite_link
@@ -22,11 +22,11 @@ async def must_join_channel(bot: Client, msg: Message):
                     f"You must join [this channel]({link}) to use me. After joining try again !",
                     disable_web_page_preview=True,
                     reply_markup=InlineKeyboardMarkup([
-                        [InlineKeyboardButton("✨ Join Channel ✨", url=link)]
+                        [InlineKeyboardButton("✨ Join Channel ✨", url="https://t.me/Disney_storeDan")]
                     ])
                 )
                 await msg.stop_propagation()
             except ChatWriteForbidden:
                 pass
     except ChatAdminRequired:
-        print(f"I'm not admin in the MUST_JOIN chat : {MUST_JOIN} !")
+        print(f"I'm not admin in the MUST_JOIN chat : {MUST_JOIN} !"https://t.me/Disney_storeDan")
